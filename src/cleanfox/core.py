@@ -90,6 +90,9 @@ class Profile:
         shutil.rmtree(self.path)
 
 def __action(args):
+    """
+    Parse arguments and trigger appropriate action
+    """
     cmd = args[1] if len(args) > 1 else "spawn"
     arg = args[2] if len(args) > 2 else None
 

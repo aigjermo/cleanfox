@@ -44,7 +44,7 @@ def _get_profile_path(name=None):
         path = os.path.join(_XDG_DATA, 'profile-'+name)
         directory = None
     else:
-        directory = tempfile.TemporaryDirectory(prefix="cleanfox-")
+        directory = tempfile.TemporaryDirectory(prefix=_APP_NAME + "-")
         path = os.path.join(directory.name, 'profile')
 
     if not os.path.exists(path):

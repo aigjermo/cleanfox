@@ -1,0 +1,5 @@
+CleanFox.egg-info/
+MANIFEST
+build/
+dist/
+venv/

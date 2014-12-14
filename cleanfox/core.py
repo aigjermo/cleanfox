@@ -89,14 +89,14 @@ class Profile:
         """
         shutil.rmtree(self.path)
 
-def __action(args):
+def action(args):
     """
     Parse arguments and trigger appropriate action
     """
     cmd = args[1] if len(args) > 1 else "spawn"
     arg = args[2] if len(args) > 2 else None
 
-    if cmd == 'base':
+    if cmd in ['base', 'template']:
         _spawn_base_profile()
         return
 
@@ -119,5 +119,11 @@ def __action(args):
     #default
     print("usage: {:s} [cmd] [name]".format(args[0]))
 
+def script_entry():
+    """
+    Run action with args from command line
+    """
+    action(sys.argv)
+
 if __name__ == '__main__':
-    __action(sys.argv)
+    script_entry()

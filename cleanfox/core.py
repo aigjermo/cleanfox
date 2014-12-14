@@ -15,9 +15,6 @@ _BROWSER_CMD = 'firefox'
 
 _XDG_DATA = bd.save_data_path(_APP_NAME)
 _BASE_PROFILE = os.path.join(_XDG_DATA, 'base-profile')
-if not os.path.exists(_BASE_PROFILE):
-    _init_base_profile()
-
 
 def _init_base_profile():
     """
@@ -124,6 +121,9 @@ def script_entry():
     Run action with args from command line
     """
     action(sys.argv)
+
+if not os.path.exists(_BASE_PROFILE):
+    _init_base_profile()
 
 if __name__ == '__main__':
     script_entry()

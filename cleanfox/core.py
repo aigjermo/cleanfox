@@ -100,7 +100,7 @@ def action(args):
         _spawn_base_profile()
         return
 
-    if cmd in ['spawn', 'launch']:
+    if cmd in ['spawn', 'launch', 'open']:
         with Profile(arg) as prf:
             prf.spawn()
         return
